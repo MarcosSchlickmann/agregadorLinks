@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\List;
+use App\Listing;
 use Illuminate\Http\Request;
 
-class ListController extends Controller
+class ListingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -39,7 +39,7 @@ class ListController extends Controller
             "name" => ['required', 'string', 'max:30'],
             "dashboard_id" => ['required', 'integer']
         ]);
-        List::create($validated);
+        Listing::create($validated);
         return redirect('/home');
     }
 
@@ -49,7 +49,7 @@ class ListController extends Controller
      * @param  \App\list  $list
      * @return \Illuminate\Http\Response
      */
-    public function show(list $list)
+    public function show(Listing $listing)
     {
         //
     }
@@ -60,7 +60,7 @@ class ListController extends Controller
      * @param  \App\list  $list
      * @return \Illuminate\Http\Response
      */
-    public function edit(list $list)
+    public function edit(Listing $listing)
     {
         //
     }
@@ -72,7 +72,7 @@ class ListController extends Controller
      * @param  \App\list  $list
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, list $list)
+    public function update(Request $request, listing $listing)
     {
         //
     }
@@ -83,7 +83,7 @@ class ListController extends Controller
      * @param  \App\list  $list
      * @return \Illuminate\Http\Response
      */
-    public function destroy(list $list)
+    public function destroy(Listing $listing)
     {
         //
     }

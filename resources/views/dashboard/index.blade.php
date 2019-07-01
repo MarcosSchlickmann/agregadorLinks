@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="col-md">
-		<form class="form-inline" action="{{ route('list.store') }}" method="POST">
+		<form class="form-inline" action="{{ route('listing.store') }}" method="POST">
 		    @csrf
 		  <div class="form-group mb-2">
 		    Name of the list:

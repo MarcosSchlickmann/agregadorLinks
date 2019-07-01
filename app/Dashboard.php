@@ -9,6 +9,6 @@ class Dashboard extends Model
     protected $guarded = [];
 
     public function lists(){
-    	return $this->hasMany('\App\List');
+    	return $this->hasMany('\App\Listing');
     }
 }

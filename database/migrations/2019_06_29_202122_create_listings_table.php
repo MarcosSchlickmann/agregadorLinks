@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDashboardTable extends Migration
+class CreateListingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateDashboardTable extends Migration
      */
     public function up()
     {
-        Schema::create('dashboards', function (Blueprint $table) {
+        Schema::create('listings', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')
-                  ->references('id')->on('users')
+            $table->unsignedBigInteger('dashboard_id');
+            $table->foreign('dashboard_id')
+                  ->references('id')->on('dashboards')
                   ->onDelete('cascade');
             $table->timestamps();
         });
@@ -31,6 +31,6 @@ class CreateDashboardTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dashboard');
+        Schema::dropIfExists('listings');
     }
 }

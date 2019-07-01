@@ -19,6 +19,6 @@ Auth::routes();
 
 Route::resource('dashboard', 'DashboardController');
 
-Route::resource('list', 'ListController');
+Route::resource('listing', 'ListingController');
 
 Route::get('/home', 'HomeController@index')->name('home');
