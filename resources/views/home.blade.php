@@ -22,11 +22,11 @@
                         @csrf
                         <div class="form-group">
                             <label for="inputListName">List name</label>
-                            <input type="text" name="name" class="form-control" id="inputListName" placeholder="Enter the list name">
+                            <input type="text" name="name" class="form-control" id="inputListName" placeholder="Enter the list name" required>
                         </div>
                         <div class="form-group">
                             <label for="inputDashboards">Select the dashboards</label>
-                                <select multiple name="associate_dashboards[]" class="form-control" id="inputDashboards">
+                                <select multiple name="associate_dashboards[]" class="form-control" id="inputDashboards" required>
                                     @foreach($dashboards as $dashboard)
                                         <option value="{{ $dashboard->id }}">{{ $dashboard->name }}</option>
                                     @endforeach

@@ -11,7 +11,7 @@ class ListingController extends Controller
     public function store(Request $request)
     {
         $validated = $this->validate($request, [
-            "name" => ['required', 'string', 'max:30'],
+            "name" => ['required', 'string', 'max:30']
         ]);
         $listing = Listing::create($validated);
         foreach ($request->associate_dashboards as $key => $associate_ashboard_id) {
