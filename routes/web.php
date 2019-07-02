@@ -21,4 +21,6 @@ Route::resource('dashboard', 'DashboardController');
 
 Route::resource('listing', 'ListingController');
 
+Route::resource('link', 'LinkController');
+
 Route::get('/home', 'HomeController@index')->name('home');

@@ -6,3 +6,30 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+.listing {
+	border: 1px solid lightgrey;
+	border-radius: 20px;
+	height: 350px;
+	padding: 15px;
+	margin-left: 10px;
+	margin-right: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.listing > .title {
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 1px solid #717171;
+}
+
+.listing > .links {
+	height: 100%;
+	list-style-type: none;
+	
+}
+
+.listing > .add {
+}

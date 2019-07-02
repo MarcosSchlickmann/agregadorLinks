@@ -11,4 +11,8 @@ class Listing extends Model
     public function dashboard(){
     	return $this->belongsTo('\App\Dashboard');
     }
+
+    public function links(){
+    	return $this->hasMany('\App\Link');
+    }
 }
