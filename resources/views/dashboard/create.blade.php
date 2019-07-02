@@ -1,7 +1,7 @@
 <form class="form-inline" action="{{ route('dashboard.store') }}" method="POST">
     @csrf
   <div class="form-group mb-2">
-    Name of your dashboard:
+    Create a new dashboard:
   </div>
   <div class="form-group mx-sm-3 mb-2">
     <label for="inputDashboardName" class="sr-only">Dashboard name</label>

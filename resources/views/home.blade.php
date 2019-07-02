@@ -15,6 +15,20 @@
                     </div>
                 </div>
             </div>
+            <div class="card">
+                <div class="card-header">Create list</div>
+                <div class="card-body">
+                    <form action="{{ route('listing.store') }}" method="POST">
+                        @csrf
+                        <div class="form-group">
+                            <label for="inputListName">List name</label>
+                            <input type="text" name="name" class="form-control" id="inputListName" placeholder="Enter the list name">
+                        </div>
+                        <input type="hidden" name="dashboard_id" value="1">
+                        <button type="submit" class="btn btn-primary">Create</button>
+                    </form>
+                </div>
+            </div>
         </div>
 
 
