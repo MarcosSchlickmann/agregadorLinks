@@ -23,6 +23,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home')->with(['dashboard' => auth()->user()->dashboard]);
+        return view('home')->with(['dashboards' => auth()->user()->dashboards]);
     }
 }

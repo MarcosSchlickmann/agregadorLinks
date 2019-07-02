@@ -38,7 +38,7 @@ class User extends Authenticatable
     ];
 
 
-    public function dashboard(){
-        return $this->hasOne("\App\Dashboard");
+    public function dashboards(){
+        return $this->hasMany("\App\Dashboard");
     }
 }
