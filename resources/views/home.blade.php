@@ -24,7 +24,14 @@
                             <label for="inputListName">List name</label>
                             <input type="text" name="name" class="form-control" id="inputListName" placeholder="Enter the list name">
                         </div>
-                        <input type="hidden" name="dashboard_id" value="1">
+                        <div class="form-group">
+                            <label for="inputDashboards">Select the dashboards</label>
+                                <select multiple name="associate_dashboards[]" class="form-control" id="inputDashboards">
+                                    @foreach($dashboards as $dashboard)
+                                        <option value="{{ $dashboard->id }}">{{ $dashboard->name }}</option>
+                                    @endforeach
+                                </select>
+                        </div>
                         <button type="submit" class="btn btn-primary">Create</button>
                     </form>
                 </div>

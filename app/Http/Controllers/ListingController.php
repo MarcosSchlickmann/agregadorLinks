@@ -13,9 +13,11 @@ class ListingController extends Controller
         $validated = $this->validate($request, [
             "name" => ['required', 'string', 'max:30'],
         ]);
-        $dashboard = Dashboard::find($request->dashboard_id);
         $listing = Listing::create($validated);
-        $dashboard->listings()->attach($listing);
+        foreach ($request->associate_dashboards as $key => $associate_ashboard_id) {
+            $dashboard = Dashboard::find($associate_ashboard_id);
+            $dashboard->listings()->attach($listing);
+        }
         return redirect('/home');
     }
 
