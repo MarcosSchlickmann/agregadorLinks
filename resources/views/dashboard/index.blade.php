@@ -13,7 +13,7 @@
 								<form action="{{ route('link.destroy', $link->id) }}" method="POST">
 									@method('DELETE')
 									@csrf
-									<button type="submit" class="btn btn-sm btn-danger">X</button>
+									<button type="submit" class="btn btn-sm btn-danger">Delete</button>
 								</form>
 							</div>
 						</div>
@@ -29,6 +29,11 @@
 			      <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Add</button>
 			    </div>
 			  </div>
+			</form>
+			<form class="delete" action="{{ route('listing.destroy', $listing->id) }}" method="POST">
+				@method('DELETE')
+				@csrf
+				<button type="submit" class="btn btn-sm btn-danger">Delete</button>
 			</form>
 		</div>
 	@endforeach

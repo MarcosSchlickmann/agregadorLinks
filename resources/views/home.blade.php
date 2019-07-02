@@ -44,7 +44,18 @@
                 @foreach($dashboards as $dashboard)
                     <div class="tab-pane fade {{ $dashboard->id == $dashboards[0]->id ? 'show active' : '' }}" id="v-pills-home{{ $dashboard->id }}" role="tabpanel" aria-labelledby="v-pills-home-tab{{ $dashboard->id }}">
                         <div class="card">
-                            <div class="card-header">{{ $dashboard ? $dashboard->name : "Dashboard" }}</div>
+                            <div class="card-header">
+                                <div class="row"> 
+                                <div class="col-md-11"> {{ $dashboard ? $dashboard->name : "Dashboard" }} </div>
+                                <div class="col-md">
+                                    <form action="{{ route('dashboard.destroy', $dashboard->id) }}" method="POST">
+                                        @method('DELETE')
+                                        @csrf
+                                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                    </form>
+                                </div>
+                            </div>
+                            </div>
 
                                 <div class="card-body">
                                     @if (session('status'))

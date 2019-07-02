@@ -22,7 +22,7 @@
 .listing > .title {
     text-align: center;
     font-weight: bold;
-    border-bottom: 1px solid #717171;
+    border-bottom: 1px solid lightgrey;
 }
 
 .listing > .links {
@@ -31,5 +31,8 @@
 	
 }
 
-.listing > .add {
+.listing > .delete {
+	text-align: center;
+	border-top: 1px solid lightgrey;
+	padding: 5px;
 }
