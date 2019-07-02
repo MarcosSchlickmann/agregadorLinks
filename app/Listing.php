@@ -8,8 +8,8 @@ class Listing extends Model
 {
     protected $guarded = [];
 
-    public function dashboard(){
-    	return $this->belongsTo('\App\Dashboard');
+    public function dashboards(){
+    	return $this->belongsToMany('\App\Dashboard');
     }
 
     public function links(){

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Listing;
+use App\Dashboard;
 use Illuminate\Http\Request;
 
 class ListingController extends Controller
@@ -37,9 +38,10 @@ class ListingController extends Controller
     {
         $validated = $this->validate($request, [
             "name" => ['required', 'string', 'max:30'],
-            "dashboard_id" => ['required', 'integer']
         ]);
-        Listing::create($validated);
+        $dashboard = Dashboard::find($request->dashboard_id);
+        $listing = Listing::create($validated);
+        $dashboard->listings()->attach($listing);
         return redirect('/home');
     }
 
