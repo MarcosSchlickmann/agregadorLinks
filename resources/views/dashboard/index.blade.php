@@ -4,7 +4,20 @@
 			<p class="title">{{ $listing->name }}</p>
 			<ul class="links">
 				@foreach($listing->links as $link)
-					<li><a href="{{ $link->url }}" target="_blank">{{ $link->name }}</a></li>
+					<li>
+						<div class="row">
+							<div class="col-md">
+								<a href="{{ $link->url }}" target="_blank">{{ $link->name }}</a>
+							</div>
+							<div class="col-md">
+								<form action="{{ route('link.destroy', $link->id) }}" method="POST">
+									@method('DELETE')
+									@csrf
+									<button type="submit" class="btn btn-sm btn-danger">X</button>
+								</form>
+							</div>
+						</div>
+					</li>
 				@endforeach
 			</ul>
 			<form class="form-inline add" action="{{ route('link.store') }}" method="POST">

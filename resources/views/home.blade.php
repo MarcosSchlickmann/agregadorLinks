@@ -10,7 +10,7 @@
                     @include('dashboard.create')
                     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                         @foreach($dashboards as $dashboard)
-                            <a class="nav-link {{ $dashboard->id == 1 ? 'active' : '' }}" id="v-pills-home-tab{{ $dashboard->id }}" data-toggle="pill" href="#v-pills-home{{ $dashboard->id }}" role="tab" aria-controls="v-pills-home{{ $dashboard->id }}" aria-selected="true">{{ $dashboard->name }}</a>
+                            <a class="nav-link {{ $dashboard->id == $dashboards[0]->id ? 'active' : '' }}" id="v-pills-home-tab{{ $dashboard->id }}" data-toggle="pill" href="#v-pills-home{{ $dashboard->id }}" role="tab" aria-controls="v-pills-home{{ $dashboard->id }}" aria-selected="true">{{ $dashboard->name }}</a>
                         @endforeach
                     </div>
                 </div>
@@ -42,7 +42,7 @@
         <div class="col-md-9 tab-content" id="myTabContent">
             <div class="tab-content" id="v-pills-tabContent">
                 @foreach($dashboards as $dashboard)
-                    <div class="tab-pane fade {{ $dashboard->id == 1 ? 'show active' : '' }}" id="v-pills-home{{ $dashboard->id }}" role="tabpanel" aria-labelledby="v-pills-home-tab{{ $dashboard->id }}">
+                    <div class="tab-pane fade {{ $dashboard->id == $dashboards[0]->id ? 'show active' : '' }}" id="v-pills-home{{ $dashboard->id }}" role="tabpanel" aria-labelledby="v-pills-home-tab{{ $dashboard->id }}">
                         <div class="card">
                             <div class="card-header">{{ $dashboard ? $dashboard->name : "Dashboard" }}</div>
 
