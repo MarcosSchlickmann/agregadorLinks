@@ -38,7 +38,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        return view('home')->with(['dashboards' => User::find($user->id)->dashboards]);
+        return view('home')->with(['dashboards' => $user->dashboards]);
     }
 
     /**
@@ -72,6 +72,7 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        $user->delete();
+        return redirect('/');
     }
 }
