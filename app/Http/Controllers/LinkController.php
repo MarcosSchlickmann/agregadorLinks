@@ -24,8 +24,9 @@ class LinkController extends Controller
         if(substr($validated["url"], 0, 4) !== "http")
             $validated["url"] = "http".":"."//" . $validated["url"];
 
+        
+        $validated["name"] = parse_url($validated["url"])["host"];
 
-        $validated["name"] = ucfirst(explode(".", $validated["url"])[1]);
         Link::create($validated);
         return redirect('/home');
     }

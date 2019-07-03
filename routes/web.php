@@ -23,4 +23,6 @@ Route::resource('listing', 'ListingController');
 
 Route::resource('link', 'LinkController');
 
+Route::resource('user', 'UserController');
+
 Route::get('/home', 'HomeController@index')->name('home');
