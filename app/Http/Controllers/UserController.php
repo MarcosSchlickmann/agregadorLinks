@@ -49,7 +49,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        return view('users.edit')->with(['user' => $user]);
     }
 
     /**
@@ -61,7 +61,14 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        $validate = $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'is_admin' => []
+        ]);
+        $user->update($validate);
+        return redirect('/');
     }
 
     /**

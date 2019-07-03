@@ -21,7 +21,7 @@
 				  	<td>{{ $user->is_admin ? 'Admin' : 'User' }}</td>
 				  	<td>
 				  		<div class="btn-group btn-group-sm" role="group" aria-label="User Functions">
-				  			<button type="button" class="btn btn-warning">Edit</button>
+				  			<a href="{{ route('user.edit', $user->id) }}" class="btn btn-warning">Edit</a>
 				  			<form action="{{ route('user.destroy', $user->id) }}" method="POST">
 				  				@method('DELETE')
 				  				@csrf
